@@ -1,0 +1,164 @@
+/* ProjectDetails.css */
+.project-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 80px; /* Space for fixed navbar */
+  }
+  
+  /* Back Button Styling */
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    position: sticky;
+    top: 70px;
+    z-index: 10;
+  }
+  
+  .back-button:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+  }
+  
+  .button-icon {
+    font-size: 1.2rem;
+  }
+  
+  /* Project Header */
+  .project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .project-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+  }
+  
+  .project-description {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Tech Stack */
+  .tech-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .tech-item.completed {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+  
+  .tech-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  
+  .completed-icon {
+    color: #10b981;
+  }
+  
+  /* Features List */
+  .features-list {
+    display: grid;
+    gap: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .feature-item {
+    position: relative;
+    padding-left: 2rem;
+    color: #475569;
+  }
+  
+  .feature-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 8px;
+    height: 8px;
+    background: #4f46e5;
+    border-radius: 50%;
+  }
+  
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-image:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    background: #f8fafc;
+    border-radius: 16px;
+  }
+  
+  .cta-button {
+    background: #4f46e5;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .project-title {
+      font-size: 2rem;
+    }
+    
+    .project-metadata {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }

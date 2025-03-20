@@ -1,0 +1,33 @@
+:root {
+    /* Light Theme */
+    --bg-color: #ffffff;
+    --text-color: #2d2d2d;
+    --primary-color: #2962ff;
+    --card-bg: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --toggle-bg: rgba(41, 98, 255, 0.1);
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1a1a1a;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(16, 18, 27, 0.95);
+    --toggle-bg: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Add these to your dark theme */
+[data-theme="dark"] {
+    --home-highlight: #2962ff;
+    --home-subtext: rgba(255, 255, 255, 0.8);
+    --btn-hover: rgba(41, 98, 255, 0.2);
+  }
+  
+  /* Light theme additions */
+  :root {
+    --home-highlight: #000000;
+    --home-subtext: rgba(45, 45, 45, 0.8);
+    --btn-hover: rgba(0, 0, 0, 0.1);
+  }
