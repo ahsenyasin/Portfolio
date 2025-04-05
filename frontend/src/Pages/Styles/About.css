@@ -1,0 +1,264 @@
+:root {
+  --primary: #000000;
+  --secondary: #000000;
+  --background: #ffffff;
+  --text: #000000;
+  --border: #e0e0e0;
+  --primary-color: #000000; /* Added for primary color */
+  --button-hover: #333333; /* Added for button hover color */
+  --text-color: #000000; /* Added for text color */
+}
+
+.about-section {
+  padding: 0rem 1rem;
+  background-color: var(--bg-color); /* Use theme variable instead of hardcoded color */
+  color: var(--text-color); /* Use theme variable for text */
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-color); /* Use theme variable instead of var(--text) */
+  margin-bottom: 2rem;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--border-color); /* Use theme variable instead of var(--border) */
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-color); /* Use theme variable instead of var(--text) */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: var(--primary-color); /* Use theme variable instead of var(--primary) */
+  color: white;
+  border-color: var(--primary-color); /* Use theme variable instead of var(--primary) */
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.profile-card {
+  background: var(--card-bg); /* Use theme variable instead of white */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--border-color); /* Use theme variable instead of var(--border) */
+}
+
+.profile-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color); /* Use theme variable instead of var(--text) */
+}
+
+.profile-education {
+  color: var(--text-color); /* Use theme variable instead of hardcoded color */
+  margin-bottom: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem; /* Added margin for spacing */
+}
+
+.social-icons .icon {
+  font-size: 1.5rem;
+  color: var(--text-color); /* Use theme variable instead of var(--text) */
+  transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  color: var(--primary-color); /* Use theme variable instead of var(--secondary) */
+}
+
+.social-icons a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.main-content {
+  background: var(--card-bg); /* Use theme variable instead of white */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color); /* Use theme variable instead of var(--text) */
+}
+
+/* Personal Info Styles */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: var(--section-bg); /* Use theme variable instead of hardcoded color */
+  border-radius: 10px;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  color: var(--primary-color); /* Use theme variable instead of var(--secondary) */
+}
+
+/* Experience Styles */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--border-color); /* Use theme variable instead of var(--border) */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color); /* Use theme variable instead of var(--secondary) */
+  border-radius: 50%;
+}
+
+/* Skills Styles */
+.skills-grid {
+  display: grid;
+  gap: 1.5rem; /* Increased spacing between skill items */
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 10px; /* Increased height for better visibility */
+  background: var(--section-bg); /* Use theme variable instead of hardcoded color */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-color); /* Use theme variable instead of var(--secondary) */
+  transition: width 0.5s ease;
+}
+
+/* Add the following CSS for the CV download button */
+.download-cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.download-cv-btn:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-3px);
+}
+
+.download-icon {
+  font-size: 1.1rem;
+}
+
+/* Update the tools grid to display the new icons */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tool-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.tool-icon:hover {
+  transform: scale(1.2);
+  color: var(--button-hover);
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

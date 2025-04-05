@@ -1,0 +1,131 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.dark-mode {
+  --bg-color: #0c0c0c;
+  --text-color: #ffffff;
+}
+
+.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #2d2d2d;
+}
+
+/* Main Content Container */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+section {
+  padding: 60px 1rem; /* Reduced padding to fix spacing issue */
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh; /* Reduced min-height to fix spacing issue */
+  scroll-margin-top: 80px; /* Adjust based on navbar height */
+}
+
+#home {
+  padding-top: 80px; /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 70px 2rem; /* Reduced padding to fix spacing issue */
+  }
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Helper Classes */
+.text-center {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Image Styling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
