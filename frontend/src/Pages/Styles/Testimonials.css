@@ -196,47 +196,5 @@
     height: 50px;
     font-size: 1.25rem;
   }
- Responsive Design */
-@media (max-width: 1024px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .testimonials-section {
-    padding: 4rem 1rem;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .testimonial-card {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonial-card {
-    padding: 1.5rem;
-  }
-
-  .quote-icon {
-    font-size: 2rem;
-  }
-
-  .testimonial-avatar {
-    width: 50px;
-    height: 50px;
-    font-size: 1.25rem;
-  }
-}
-
-  .section-title {
-    font-size: 2rem;
-  }
 }
 
