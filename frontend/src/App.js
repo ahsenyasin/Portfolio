@@ -59,8 +59,8 @@ function AppContent() {
     if (savedTheme) {
       return savedTheme === 'dark';
     }
-    // Otherwise check system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Default to dark mode
+    return true;
   });
 
   // Update theme attribute and localStorage when darkMode state changes
