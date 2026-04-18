@@ -7,51 +7,55 @@ import './Styles/Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    name: 'Asad',
-    position: 'Founder, Lady Bird Cosmetics',
-    avatar: 'A', // First letter for avatar
+    name: 'Sarah Johnson',
+    position: 'CEO, TechFlow Solutions',
+    avatar: 'S',
     stars: 5,
-    text: 'Created a stunning e-commerce website that beautifully showcases our cosmetic products and enhances customer engagement.'
+    text: 'Incredible results! Our social media engagement increased by 250% in just 3 months. The ROI from the campaigns has been phenomenal.'
   },
   {
     id: 2,
-    name: 'Michael Johnson',
-    position: 'Founder, StartUp Ventures',
+    name: 'Michael Chen',
+    position: 'Founder, GreenLeaf Organics',
     avatar: 'M',
-    stars: 4.5,
-    text: 'Their app solutions have streamlined our accounting processes and improved accuracy.'
+    stars: 5,
+    text: 'The SEO strategy delivered exactly what was promised. We\'re now ranking #1 for our target keywords and our organic traffic has tripled.'
   },
   {
     id: 3,
-    name: 'Ozair',
-    position: 'CEO, FinTrack Accounting',
-    avatar: 'O',
-    stars: 5,
-    text: 'Delivered a scalable, high performing website that aligns perfectly with our brand vision.'
+    name: 'Emily Rodriguez',
+    position: 'Marketing Director, StyleHub',
+    avatar: 'E',
+    stars: 4.5,
+    text: 'Outstanding PPC management! The conversion rate improved by 180% while reducing our cost per acquisition significantly.'
   },
-  // {
-  //   id: 4,
-  //   name: 'Ayesha Ahmed',
-  //   position: 'CTO, Innovative Solutions',
-  //   avatar: 'A',
-  //   stars: 4.5,
-  //   text: 'Their app development expertise and attention to detail resulted in a seamless and efficient launch.'
-  // }
+  {
+    id: 4,
+    name: 'David Thompson',
+    position: 'Owner, FitLife Wellness',
+    avatar: 'D',
+    stars: 5,
+    text: 'The email marketing campaigns generated over $150K in revenue. The strategic approach and execution were flawless.'
+  }
 ];
 
 const Testimonials = () => {
-  // Function to render stars based on rating
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
 
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<FaStar key={`star-${i}`} className="star" />);
+      stars.push(<FaStar key={`star-${i}`} className="star filled" />);
     }
 
     if (hasHalfStar) {
-      stars.push(<FaStarHalfAlt key="half-star" className="star" />);
+      stars.push(<FaStarHalfAlt key="half-star" className="star filled" />);
+    }
+
+    const emptyStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<FaStar key={`empty-${i}`} className="star empty" />);
     }
 
     return stars;
@@ -60,36 +64,38 @@ const Testimonials = () => {
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <h2 className="section-title">Client Testimonials</h2>
+        <div className="section-header-testimonials">
+          <span className="section-tag">Testimonials</span>
+          <h2 className="section-title">Client Success Stories</h2>
+          <p className="section-subtitle">
+            Hear from businesses that have achieved remarkable growth through our marketing strategies
+          </p>
+        </div>
 
         <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
-              <div className="testimonial-avatar">
-                {testimonial.avatar}
+          {testimonials.map((testimonial, index) => (
+            <div key={testimonial.id} className="testimonial-card" style={{ animationDelay: `${index * 0.1}s` }}>
+              <FaQuoteLeft className="quote-icon" />
+              
+              <div className="testimonial-stars">
+                {renderStars(testimonial.stars)}
               </div>
 
-              <div className="testimonial-content">
-                <h3 className="testimonial-name">{testimonial.name}</h3>
-                <p className="testimonial-position">{testimonial.position}</p>
+              <div className="testimonial-text">
+                <p>{testimonial.text}</p>
+              </div>
 
-                <div className="testimonial-stars">
-                  {renderStars(testimonial.stars)}
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">
+                  {testimonial.avatar}
                 </div>
-
-                <div className="testimonial-text">
-                  <FaQuoteLeft className="quote-icon" />
-                  <p>{testimonial.text}</p>
+                <div className="author-info">
+                  <h4 className="testimonial-name">{testimonial.name}</h4>
+                  <p className="testimonial-position">{testimonial.position}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="testimonial-indicators">
-          <span className="indicator active"></span>
-          <span className="indicator"></span>
-          <span className="indicator"></span>
         </div>
       </div>
     </section>
