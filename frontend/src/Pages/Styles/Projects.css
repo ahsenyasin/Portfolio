@@ -1,201 +1,518 @@
-/* Projects.css */
-.projects-section {
-  padding: 4rem 1rem;
-  background-color: var(--bg-color); /* Use theme variable instead of hardcoded color */
-  color: var(--text-color); /* Use theme variable */
+/* ========================================
+   MARKETING CAMPAIGNS - FRESH DESIGN
+   ======================================== */
+
+/* Section Wrapper */
+.campaigns-section {
+  min-height: 100vh;
+  padding: 6rem 1rem;
+  background: linear-gradient(180deg, var(--bg-color) 0%, var(--card-bg) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.projects-container {
-  max-width: 1200px;
+.campaigns-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: radial-gradient(circle at 30% 20%, var(--primary-color) 0%, transparent 50%);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.campaigns-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
+.campaigns-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.header-content {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.section-header {
+.header-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.header-label::before,
+.header-label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+}
+
+.header-label::before {
+  left: 0;
+}
+
+.header-label::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--primary-color), transparent);
+}
+
+.header-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.header-subtitle {
+  font-size: 1.125rem;
+  color: var(--home-subtext);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CAMPAIGNS GRID
+   ======================================== */
+
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+/* ========================================
+   CAMPAIGN CARD
+   ======================================== */
+
+.campaign-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  overflow: hidden;
+  text-decoration: none;
   display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  animation: fadeInUp 0.8s ease both;
+  cursor: pointer;
+}
+
+.campaign-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+/* ========================================
+   IMAGE SECTION
+   ======================================== */
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.campaign-card:hover .card-image {
+  transform: scale(1.08);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--bg-color), transparent);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Featured Tag */
+.featured-tag {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  z-index: 2;
+}
+
+/* Duration Badge */
+.duration-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+  z-index: 2;
+}
+
+/* ========================================
+   CONTENT SECTION
+   ======================================== */
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.campaign-card:hover .card-title {
+  color: var(--primary-color);
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: var(--home-subtext);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* ========================================
+   METRIC HIGHLIGHT
+   ======================================== */
+
+.card-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--section-bg);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.metric-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--home-subtext);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+
+.card-cta {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--bg-color);
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.campaign-card:hover .card-cta {
+  background: var(--button-bg);
+  color: white;
+}
+
+.cta-icon {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.campaign-card:hover .cta-icon {
+  transform: translate(4px, -4px);
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.campaigns-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.header-content {
-  flex: 1;
-  max-width: 400px;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  color: var(--text-color); /* Use theme variable instead of hardcoded color */
-  margin-bottom: 1rem;
-}
-
-.section-description {
-  color: var(--text-color); /* Use theme variable instead of hardcoded color */
-  opacity: 0.7;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-.all-projects-btn {
-  background: var(--primary-color); /* Use theme variable instead of hardcoded color */
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 25px;
-  border: none;
+.nav-btn {
+  padding: 0.875rem 2rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  font-weight: 500;
   transition: all 0.3s ease;
 }
 
-.all-projects-btn:hover {
-  opacity: 0.9;
+.nav-btn:hover {
+  background: var(--button-bg);
+  color: white;
+  border-color: var(--button-bg);
   transform: translateY(-2px);
 }
 
-.projects-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: var(--card-bg); /* Use theme variable instead of hardcoded color */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-image-container {
-  height: 250px;
-  overflow: hidden;
-}
-
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
-}
-
-.project-title {
-  font-size: 1.4rem;
-  color: var(--text-color); /* Use theme variable instead of hardcoded color */
-  margin: 1.5rem 1.5rem 0.5rem;
-}
-
-.project-description {
-  color: var(--text-color); /* Use theme variable instead of hardcoded color */
-  opacity: 0.7;
-  margin: 0 1.5rem 1.5rem;
-  line-height: 1.6;
-}
-
-.learn-more {
-  display: inline-block;
-  color: var(--primary-color); /* Use theme variable instead of hardcoded color */
-  text-decoration: none;
-  margin: 0 1.5rem 1.5rem;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-
-.learn-more:hover {
-  opacity: 0.8;
-}
-
-/* Carousel Container */
-.carousel-container {
-  margin-top: 2rem;
-}
-
-.carousel-navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.carousel-btn {
-  background: var(--primary-color);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
+.nav-dots {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  gap: 0.75rem;
 }
 
-.carousel-btn:hover {
-  transform: scale(1.1);
-  background-color: var(--button-hover);
-}
-
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  margin: 0 1rem;
-}
-
-.indicator {
+.nav-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--border-color); /* Use theme variable */
+  background: var(--border-color);
+  border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0;
 }
 
-.indicator.active {
-  background: var(--primary-color); /* Use theme variable */
-  transform: scale(1.2);
+.nav-dot.active {
+  background: var(--primary-color);
+  width: 32px;
+  border-radius: 6px;
+}
+
+.nav-dot:hover:not(.active) {
+  background: var(--primary-color);
+  opacity: 0.5;
+}
+
+/* ========================================
+   VIEW ALL BUTTON
+   ======================================== */
+
+.view-all-wrapper {
+  text-align: center;
+}
+
+.view-all-btn {
+  padding: 1.25rem 3rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--bg-color), transparent);
+  opacity: 0.3;
+  transition: left 0.6s;
+}
+
+.view-all-btn:hover::before {
+  left: 100%;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .campaigns-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  .campaigns-section {
+    padding: 5rem 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .section-header {
-    flex-direction: column;
+  .campaigns-section {
+    padding: 4rem 1rem;
   }
-
-  .projects-grid {
+  
+  .campaigns-header {
+    margin-bottom: 3rem;
+  }
+  
+  .header-title {
+    font-size: 2.5rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1rem;
+  }
+  
+  .campaigns-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-
-  .section-title {
-    font-size: 2rem;
+  
+  .card-image-wrapper {
+    height: 220px;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .metric-value {
+    font-size: 1.75rem;
+  }
+  
+  .campaigns-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .nav-btn {
+    width: 100%;
+  }
+  
+  .header-label::before,
+  .header-label::after {
+    display: none;
   }
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 576px) {
-  .projects-section {
-    padding: 3rem 1rem;
+@media (max-width: 480px) {
+  .campaigns-section {
+    padding: 4rem 0.75rem;
   }
-
-  .project-image-container {
-    height: 200px;
+  
+  .card-metric {
+    padding: 1rem;
   }
-
-  .project-title {
-    font-size: 1.2rem;
+  
+  .featured-tag {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
   }
+  
+  .duration-badge {
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
 
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,44 +1,56 @@
 :root {
-  /* Light Theme */
+  /* Light Theme - Modern Digital Marketing Colors */
   --bg-color: #ffffff;
-  --text-color: #2d2d2d;
-  --primary-color: #2962ff;
-  --secondary-color: #0c0c0c;
+  --text-color: #1a1a2e;
+  --primary-color: #6C63FF;
+  --secondary-color: #FF6584;
+  --accent-color: #4ECDC4;
   --card-bg: #ffffff;
-  --section-bg: #f8f9fa;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --toggle-bg: rgba(41, 98, 255, 0.1);
-  --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  --button-bg: #2962ff;
+  --section-bg: #f8f9fd;
+  --border-color: rgba(108, 99, 255, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --toggle-bg: rgba(108, 99, 255, 0.1);
+  --shadow: 0 10px 40px rgba(108, 99, 255, 0.1);
+  --shadow-hover: 0 20px 60px rgba(108, 99, 255, 0.2);
+  --button-bg: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
   --button-text: #ffffff;
-  --button-hover: #1e56e0;
-  --code-bg: #f0f0f0;
-  --home-highlight: #000000;
-  --home-subtext: rgba(45, 45, 45, 0.8);
-  --btn-hover: rgba(0, 0, 0, 0.1);
-  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --button-hover: linear-gradient(135deg, #5952E6 0%, #3DBDB4 100%);
+  --code-bg: #f5f5f5;
+  --home-highlight: #6C63FF;
+  --home-subtext: rgba(26, 26, 46, 0.7);
+  --btn-hover: rgba(108, 99, 255, 0.1);
+  --card-shadow: 0 15px 35px rgba(108, 99, 255, 0.08);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-overlay: linear-gradient(135deg, rgba(108, 99, 255, 0.95), rgba(78, 205, 196, 0.95));
 }
 
 [data-theme="dark"] {
-  --bg-color: #0c0c0c;
+  --bg-color: #0f0f1e;
   --text-color: #ffffff;
-  --primary-color: #3a7bff;
-  --secondary-color: #eae8e4;
-  --card-bg: #1a1a1a;
-  --section-bg: #151515;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --nav-bg: rgba(16, 18, 27, 0.95);
-  --toggle-bg: rgba(255, 255, 255, 0.1);
-  --shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  --button-bg: #3a7bff;
+  --primary-color: #8B7FFF;
+  --secondary-color: #FF7B9C;
+  --accent-color: #5EDDD4;
+  --card-bg: #1a1a2e;
+  --section-bg: #16162a;
+  --border-color: rgba(139, 127, 255, 0.15);
+  --nav-bg: rgba(15, 15, 30, 0.9);
+  --toggle-bg: rgba(139, 127, 255, 0.15);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 60px rgba(139, 127, 255, 0.3);
+  --button-bg: linear-gradient(135deg, #8B7FFF 0%, #5EDDD4 100%);
   --button-text: #ffffff;
-  --button-hover: #2362ea;
-  --code-bg: #2a2a2a;
-  --home-highlight: #3a7bff;
+  --button-hover: linear-gradient(135deg, #7B6FEF 0%, #4ECDC4 100%);
+  --code-bg: #252540;
+  --home-highlight: #8B7FFF;
   --home-subtext: rgba(255, 255, 255, 0.7);
-  --btn-hover: rgba(255, 255, 255, 0.1);
-  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --btn-hover: rgba(139, 127, 255, 0.15);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  --gradient-primary: linear-gradient(135deg, #7c6fd6 0%, #8f5db2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #5fb4ff 0%, #10e2ee 100%);
+  --gradient-overlay: linear-gradient(135deg, rgba(139, 127, 255, 0.95), rgba(94, 221, 212, 0.95));
 }
 
 /* Custom Scrollbar */
